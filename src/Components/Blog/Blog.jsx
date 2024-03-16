@@ -1,4 +1,5 @@
 const Blog = ({ Blog }) => {
+    console.log(Blog)
     return (
         <div>
 
