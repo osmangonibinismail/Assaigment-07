@@ -5,7 +5,7 @@ const Bookmark = ({bookmark, handleAddToCook, index}) => {
     
     return (
         <>
-        <tr className='mx-auto max-w-[90%] lg:max-w-[80%] py-5 g-5' >
+        <tr className='mx-auto max-w-[90%] lg:max-w-[] py-5 g-1' >
             <td >{index}</td>
             <td className=''>{recipe_name}</td>
             <td className=''>{preparing_time} minutes</td>
