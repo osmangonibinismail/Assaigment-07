@@ -7,10 +7,11 @@ import Header from './Components/Header/Header'
 import Recips from './Components/Recips/Recips'
 
 function App() {
-  const [bookmarks setBookmarks] = useState([]);
+  const [bookmarks, setBookmarks] = useState([]);
 
   const handleAddToBookmark = blog => {
-    console.log('blog');
+    const newBookmarks = [...bookmarks, blog];
+    setBookmarks(newBookmarks);
   }
   return (
     <>
@@ -19,7 +20,7 @@ function App() {
     <Recips></Recips>
     <div className='md:flex max-w-8xl mx-auto'>
       <Blogs handleAddToBookmark={handleAddToBookmark}></Blogs>
-      <Bookmarks></Bookmarks>
+      <Bookmarks bookmarks={bookmarks}></Bookmarks>
     </div>
     </>
   )

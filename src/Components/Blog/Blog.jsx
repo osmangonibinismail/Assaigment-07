@@ -8,14 +8,22 @@ const Blog = ({ blog, handleAddToBookmark }) => {
             <img className='w-80% mb-8 rounded-2xl' src={recipe_image} alt= {`Cover picture of the title ${title}`} />
             <h2 className="h2 text-4xl mb-4">{recipe_name}</h2>
             <p className='mb-4'>{short_description}</p>
-            <h2 className='mb-3'>{ingredients}</h2>
-            <div className='flex justify-between '>
+            <h2 className='mb-3'>Ingradience: {ingredients.length}</h2>
+            <ul className='list-disc pl-8'>
+                {
+                    ingredients.map((item, index) => (
+                        <li key={index}>{item}</li>
+                    ))
+                }
+            </ul>
+            <div className='flex justify-between mb-3 mt-3 text-wrap'>
                 <div className='flex gap-1'>
                     <button className='ml-2 text-xl bg-white'><CiClock2></CiClock2></button>
                     <span>{preparing_time} minutes</span>
                 </div>
-                <div className='flex gap-1'>
-                    <button className='ml-2 text-xl bg-white'><MdWhatshot></MdWhatshot></button>
+                <div className='flex gap-1 items-center'>
+                    <button className='ml-2 text-xl bg-white'><MdWhatshot></MdWhatshot>
+                   </button>
                     <span>{calories} calories</span>
                 </div>
             </div>
@@ -27,7 +35,7 @@ const Blog = ({ blog, handleAddToBookmark }) => {
     );
 };
 Blog.propTypes = {
-    blog: PropTypes.object.isRequired
+    blog: PropTypes.object.isRequired,
     handleAddToBookmark: PropTypes.func
 }
 
