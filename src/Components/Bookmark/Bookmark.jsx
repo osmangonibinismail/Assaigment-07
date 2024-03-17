@@ -11,11 +11,11 @@ const Bookmark = ({bookmark, handleAddToCook, index}) => {
             <td className=''>{preparing_time} minutes</td>
             <td className=''>{calories} calories</td>
             <td className=''>
-                <button
+                <a
                     onClick={() => handleAddToCook(bookmark)}
                     className='btn btn-primary text-white rounded-full'>
                     preparing
-                </button>
+                </a>
             </td>
         </tr>
         </>
