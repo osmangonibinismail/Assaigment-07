@@ -8,7 +8,7 @@ const Bookmarks = ({bookmarks, handleAddToCook, cooks}) => {
             <h2 className='text-3xl text-center text-black'>Want to Cook: {bookmarks.length}
             </h2>
             <div>
-            <table className='table'>
+            <table className='table block'>
                 <thead>
                     <tr className='text-2xl '>
                         <td></td>
