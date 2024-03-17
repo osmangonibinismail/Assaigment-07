@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Blog from "../Blog/Blog";
 import PropTypes from 'prop-types';
 
-const Blogs = ({handleAddToBookmark}) => {
+const Blogs = ({handleAddToBookmark, handleAddToCook}) => {
     const [blogs, setBlogs ] = useState([]);
 
     useEffect( () => {
@@ -11,13 +11,13 @@ const Blogs = ({handleAddToBookmark}) => {
             .then(data => setBlogs(data))
         },[])
     return(
-        <div className="md:w-1/3">
-            <h1 className="text-4xl">Data: {blogs.length}</h1>
+        <div className="md:w-2/3 grid md:grid-cols-2 gap-12">
             {
                 blogs.map(blog => <Blog
                     key={blog.recipe_id}
                     blog={blog}
                     handleAddToBookmark={handleAddToBookmark}
+                    handleAddToCook={handleAddToCook}
                 ></Blog>)
             }
         </div>

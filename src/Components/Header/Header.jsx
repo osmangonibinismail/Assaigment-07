@@ -1,7 +1,7 @@
 import { FaHome } from "react-icons/fa";
 const Header = () => {
     return(
-    <div>
+    <div className="mx-auto max-w-[100%] lg:max-w-[80%] py-5">
          <div className="navbar bg-base-100">
              <div className="navbar-start">
                 <div className="dropdown">
